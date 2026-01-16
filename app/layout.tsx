@@ -5,6 +5,11 @@ import { Playfair_Display, Inter } from "next/font/google";
 const serif = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Arda Edil",
   description: "Software Engineer Portfolio",

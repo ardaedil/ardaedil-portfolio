@@ -8,30 +8,37 @@ type Experience = {
 
 const EXPERIENCES: Experience[] = [
   {
-    title: "Building systems that help people ship software",
-    dates: "2025 — Present",
+    title: "Student Software Consultant → Product Manager",
+    org: "Menlo Innovations (Client)",
+    dates: "2025 September — Present",
     bullets: [
-      "Replace this with your best SWE experience / project.",
-      "Add measurable impact: latency ↓, users ↑, revenue ↑, etc.",
+        "Worked as a student software consultant for Menlo Innovations, initially focused on backend software development.",
+        "Built and maintained backend systems in Java supporting production workflows.",
+        "Transitioned into a Product Manager role, owning requirements gathering, prioritization, and delivery planning.",
+        "Acted as the primary liaison between stakeholders and developers, translating client needs into technical execution.",
     ],
     featured: true,
-  },
+    },
+
   {
-    title: "Software Engineering Project — Full Stack",
-    org: "Personal / School",
-    dates: "2024 — 2025",
+    title: "Supply Chain Analyst Intern",
+    org: "Setas Masterbatch",
+    dates: "Jun 2024 — Jul 2024",
     bullets: [
-      "Built X using Next.js / React / Node / PostgreSQL.",
-      "Implemented auth, caching, and deployment pipeline.",
+      "Built demand forecasting models under Dr. M. Emre Sener using Python and scikit-learn.",
+      "Improved forecast accuracy by ~13% by replacing k-means with agglomerative clustering.",
+      "Reduced stockouts by ~20% and increased on-time material availability by +8 percentage points.",
+      "Enabled purchasing ~10 days earlier through improved planning and supplier coordination.",
     ],
   },
   {
-    title: "Systems / Data Structures Work",
-    org: "Coursework",
-    dates: "2023 — 2024",
+    title: "Software Developer",
+    org: "Lore",
+    dates: "2025 January — 2025 April",
     bullets: [
-      "C++ projects focusing on performance + correctness.",
-      "Testing, debugging, and edge-case handling.",
+      "Built full-stack product features using React and Node.js.",
+      "Worked across frontend and backend to ship user-facing flows and integrations.",
+      "Collaborated closely with designers and engineers to iterate quickly and deliver production features.",
     ],
   },
 ];
@@ -55,6 +62,7 @@ function Card({ exp }: { exp: Experience }) {
           click / hover
         </div>
       </div>
+
       <ul className="mt-3 space-y-2 text-sm leading-6 text-zinc-700">
         {exp.bullets.map((b) => (
           <li key={b} className="flex gap-2">
@@ -69,11 +77,11 @@ function Card({ exp }: { exp: Experience }) {
 
 export default function ExperienceList() {
   return (
-    <section className="mt-10">
+    <section className="mt-10" id="experience">
       <h2 className="font-[var(--font-serif)] text-2xl text-zinc-900">Experience</h2>
       <div className="mt-4 space-y-4">
         {EXPERIENCES.map((exp) => (
-          <Card key={exp.title} exp={exp} />
+          <Card key={`${exp.title}-${exp.org}`} exp={exp} />
         ))}
       </div>
     </section>
