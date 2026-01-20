@@ -1,49 +1,49 @@
-# Menlo Innovations — Software Engineer Intern → Project Manager
+# Menlo Innovations — Student Software Consultant → Product / Project Manager
 
-## Overview
-I initially worked at Menlo Innovations as a Software Engineering Intern and later transitioned into a **Project Manager role**, where I now lead and coordinate ongoing development efforts.
+## Context
+I worked as a **student software consultant** on a real client engagement with Menlo Innovations. The work involved ambiguous requirements, evolving constraints, and direct collaboration with stakeholders. Over time, I expanded from primarily technical contributions into a product and project leadership role.
 
-This progression reflects both my technical contributions and my ability to take ownership of projects end-to-end.
+This experience reflects both hands-on engineering work and ownership over planning, execution, and delivery.
 
 ---
 
-## Role 1: Software Engineering Intern
+## Role 1: Software Engineering Consultant
 
 ### Project: Project Punch
-I helped build and maintain backend systems responsible for processing and analyzing operational data.
+I contributed to the design and implementation of backend systems used to process and manage operational data for internal workflows.
 
-#### What I did
-- Designed and implemented backend components in **Java**
-- Built data ingestion and processing pipelines for internal analytics
-- Improved system reliability through testing and refactoring
-- Worked in a collaborative, test-driven development environment
+### What I worked on
+- Designed and implemented backend components in **Java** for a production-facing internal system
+- Built data ingestion and processing pipelines to automate operational workflows
+- Improved reliability and maintainability through testing, refactoring, and clearer system boundaries
+- Collaborated closely with other engineers in a test-driven, iterative development environment
 
-#### Impact
-- Reduced manual operational overhead by automating data workflows
-- Improved data availability and consistency for downstream systems
-- Contributed to a production system used by internal teams
-
-#### Skills Demonstrated
-- Backend system design
-- Data processing pipelines
-- Writing maintainable, testable production code
+### Impact
+- Significantly reduced manual operational overhead by automating recurring workflows
+- Improved data consistency and availability for downstream use
+- Contributed to a system actively used by internal teams
 
 ---
 
-## Role 2: Project Manager (Current)
+## Role 2: Product / Project Manager (Current)
+
+As the project evolved, I took on ownership beyond implementation, transitioning into a **product and project management role**.
 
 ### Responsibilities
-- Lead and coordinate development for ongoing internal projects
-- Translate product and operational requirements into technical tasks
-- Manage timelines, priorities, and cross-functional communication
-- Ensure alignment between stakeholders, engineers, and deliverables
+- Owned project planning, task breakdown, and milestone tracking
+- Translated high-level operational needs into concrete technical requirements
+- Balanced scope, timelines, and technical constraints while maintaining forward progress
+- Acted as a bridge between stakeholders and engineers to reduce ambiguity
 
 ### Impact
-- Improved clarity and execution speed across project milestones
-- Enabled engineers to focus on implementation by reducing ambiguity
-- Maintained project momentum through clear planning and ownership
+- Improved execution speed by clarifying priorities and technical direction
+- Enabled engineers to focus on implementation by removing blockers and uncertainty
+- Maintained momentum across an evolving project with changing requirements
 
-### Skills Demonstrated
-- Technical project management
-- Systems thinking
-- Communication between technical and non-technical stakeholders
+---
+
+## What This Experience Demonstrates
+- Ability to work effectively with **unclear or evolving requirements**
+- Comfort taking **ownership** beyond narrowly defined tasks
+- Strong foundation in backend systems alongside product-oriented thinking
+- Experience operating in small, high-trust teams with real delivery expectations

@@ -57,8 +57,6 @@ function retrieveTop(query: string, chunks: string[], k = 5) {
     .filter((x) => x.s > 0);
 }
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
@@ -77,6 +75,8 @@ export async function POST(req: Request) {
     if (!message) {
       return Response.json({ error: "Missing message" }, { status: 400 });
     }
+
+    const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
     const all = readAllMarkdown();
     const chunks = chunkText(all);

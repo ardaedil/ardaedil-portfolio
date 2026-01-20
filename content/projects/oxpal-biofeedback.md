@@ -1,33 +1,77 @@
-# OxPal: Empowering Children with Stress Regulation Through Biofeedback
+# OxPal — Child-Centered Biofeedback for Stress Regulation  
+**HCI Research · Mobile Systems · Physiological Computing**
 
-## Research Context
-This work was published at the Human-Computer Interaction International (HCII) 2024 conference and appears in Springer’s *Communications in Computer and Information Science* series.
+🔗 **Publication:** HCI International (HCII) 2024 — Springer, *Communications in Computer and Information Science*  
+🔗 **Paper:** https://link.springer.com/chapter/10.1007/978-3-031-78561-0_2
 
-Paper: https://link.springer.com/chapter/10.1007/978-3-031-78561-0_2
+---
 
-## Overview
-I contributed to the OxPal research project, which resulted in a Springer publication titled *OxPal: Empowering Children with Stress Regulation Through Biofeedback*. The system is a child-friendly biofeedback device and application designed to help children aged ~7–11 regulate stress through breathing techniques. :contentReference[oaicite:1]{index=1}
+## Problem
+Most biofeedback tools for stress regulation are:
+- Designed primarily for adults
+- Expensive, closed-source, or difficult to access
+- Not optimized for long-term use by children
 
-OxPal addresses a gap in accessible biofeedback tools: many existing approaches were either costly or not optimized for long-term use by children. :contentReference[oaicite:2]{index=2}
+Children (ages ~7–11) often struggle with stress regulation but lack accessible tools that combine **physiological sensing**, **real-time feedback**, and **child-friendly interaction design**.
+
+---
+
+## Solution
+**OxPal** is a child-friendly biofeedback system designed to help children regulate stress through guided breathing.
+
+The system consists of:
+- A **PPG-based biofeedback device** that measures physiological signals
+- A **mobile application** that interprets those signals in real time
+- **Personalized breathing guidance** that responds to the user’s physiological state
+
+OxPal emphasizes accessibility, simplicity, and sustained engagement rather than clinical complexity.
+
+---
+
+## My Role
+I worked on OxPal as part of an interdisciplinary HCI research team, contributing across **hardware integration, signal processing, and mobile software development**.
+
+---
 
 ## What I Built
-- Helped implement and integrate a **biofeedback device** using photoplethysmography (PPG) sensors to track physiological signals (heart rate variability, breathing patterns). :contentReference[oaicite:3]{index=3}
-- Built parts of the **mobile application** that interprets the real-time data from the device.
-- Designed systems to display **personalized breathing guidance** tailored to the user’s physiological data.
-- Worked with interdisciplinary teams (design, research, engineering) on both hardware interface and software data interpretation.
 
-## Research Context
-OxPal uses PPG sensors (non-invasive and cost-effective) to measure physiological signals. Its companion app interprets those signals, offers effective breathing techniques, and encourages children to self-regulate stress. :contentReference[oaicite:4]{index=4}
+### Biofeedback & Signal Processing
+- Integrated **photoplethysmography (PPG) sensors** to collect real-time cardiovascular data
+- Helped implement signal preprocessing pipelines:
+  - Noise reduction
+  - Baseline normalization
+  - Moving-average filtering
+- Assisted in computing **heart rate variability (HRV)** metrics (e.g., SDNN) used as indicators of stress
 
-This work was published at the Human-Computer Interaction International 2024 conference and included in *Communications in Computer and Information Science* (CCIS, vol. 2321). :contentReference[oaicite:5]{index=5}
+### Mobile Application
+- Built components of the **mobile app** that:
+  - Receives real-time data from the biofeedback device
+  - Visualizes heart rate and HRV in a child-friendly interface
+  - Delivers **guided breathing exercises** based on physiological signals
+- Focused on clarity, engagement, and age-appropriate interaction design
+
+### Research & Collaboration
+- Collaborated with researchers, designers, and engineers in an **HCI-focused research environment**
+- Contributed to system iteration, evaluation framing, and technical documentation
+- Co-authored a **peer-reviewed Springer publication**
+
+---
 
 ## Impact
-- Provided evidence-backed stress regulation support in a mobile + hardware biofeedback context.
-- Demonstrated the feasibility of a *child-focused physiological regulation tool*.
-- Strengthened my skills in biomedical sensing, real-time data processing, and interdisciplinary research collaboration.
+- Demonstrated the feasibility of a **low-cost, child-centered biofeedback system**
+- Showed how physiological sensing and mobile software can support emotional self-regulation
+- Contributed to an **open, research-driven alternative** to commercial biofeedback tools
+- Strengthened my interest in **Human–Computer Interaction, applied AI, and human-centered systems**
 
-## Skills Demonstrated
-- Biofeedback sensor integration (PPG)
-- Physiological signal interpretation
-- Mobile software engineering
-- Cross-disciplinary research and publication
+---
+
+## Skills & Technologies
+- **Physiological Computing:** PPG sensing, HRV metrics, signal preprocessing  
+- **Mobile Engineering:** Bluetooth data flow, real-time visualization  
+- **HCI Research:** Child-centered design, usability, interdisciplinary collaboration  
+- **Systems Thinking:** Hardware–software integration, real-time feedback loops  
+
+---
+
+## Why This Project Matters to Me
+OxPal reinforced my interest in building systems that sit at the intersection of **technology, human behavior, and real-world impact**. I enjoy working on problems where engineering decisions directly shape how people experience and benefit from technology—especially in human-centered and research-driven contexts.
