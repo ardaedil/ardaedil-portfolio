@@ -22,7 +22,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    role: "Research Engineer",
+    role: "Research Assistant",
     name: "OxPal — Biofeedback Research (Published)",
     dates: "2023 — 2024",
     badge: "Publication",

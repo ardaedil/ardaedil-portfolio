@@ -8,14 +8,14 @@ type Experience = {
 
 const EXPERIENCES: Experience[] = [
   {
-    title: "Student Software Consultant → Product Manager",
-    org: "Menlo Innovations (Client)",
+    title: "Student Software Consultant & Product Manager",
+    org: "Menlo Innovations",
     dates: "2025 September — Present",
     bullets: [
-        "Worked as a student software consultant for Menlo Innovations, initially focused on backend software development.",
-        "Built and maintained backend systems in Java supporting production workflows.",
-        "Transitioned into a Product Manager role, owning requirements gathering, prioritization, and delivery planning.",
-        "Acted as the primary liaison between stakeholders and developers, translating client needs into technical execution.",
+      "Building and leading development of Project Punch, a Java-based timesheet submission and validation system for Menlo Innovations.",
+      "Automating email-based intake using JavaMail and SQL-backed workflows to validate, track, and persist submissions.",
+      "Reducing weekly operational prep time from ~2 hours to ~15 minutes through end-to-end automation.",
+      "Leading requirements and sprint planning for data ingestion features, coordinating engineers and stakeholders through delivery.",
     ],
     featured: true,
     },
