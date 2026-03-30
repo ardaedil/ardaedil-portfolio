@@ -11,9 +11,11 @@ import ProjectsList from "../src/components/ProjectsList";
 import SkillsSection from "../src/components/SkillsSection";
 import TechnicalCourses from "../src/components/TechnicalCourses";
 import Dock from "../src/components/Dock";
+import PortfolioVersionLab from "../src/components/PortfolioVersionLab";
 
 export default function Home() {
   const [mode, setMode] = useState<Mode>("concise");
+  const [queuedQuestion, setQueuedQuestion] = useState<{ id: number; text: string } | null>(null);
 
   return (
     <main className="paper-bg paper-grain min-h-screen">
@@ -30,7 +32,7 @@ export default function Home() {
             {/* Top row: name + toggle */}
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
               <div>
-                <h1 className="font-[var(--font-serif)] text-5xl tracking-tight text-zinc-900">
+                <h1 className="font-[var(--app-font-serif)] text-5xl tracking-tight text-zinc-900">
                   Arda Edil
                 </h1>
                 <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-700 transition-opacity duration-200">
@@ -102,7 +104,7 @@ export default function Home() {
                     key={q}
                     className="rounded-full border border-zinc-200 bg-white/60 px-3 py-2 text-xs text-zinc-700 shadow-sm backdrop-blur hover:bg-white"
                     onClick={() => {
-                      // Next step: auto-send this chip into ChatPanel.
+                      setQueuedQuestion({ id: Date.now(), text: q });
                     }}
                   >
                     {q}
@@ -111,9 +113,11 @@ export default function Home() {
               </div>
 
               <div className="mt-4">
-                <ChatPanel />
+                <ChatPanel queuedQuestion={queuedQuestion} />
               </div>
             </section>
+
+            <PortfolioVersionLab />
 
             <ExperienceList />
             <ProjectsList />
