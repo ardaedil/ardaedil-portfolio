@@ -1,8 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type Mode = "concise" | "detailed";
+
+type QueuedQuestion = {
+  id: number;
+  text: string;
+};
 
 const SUGGESTED = [
   "Summarize my experience for a SWE role.",
@@ -11,58 +16,68 @@ const SUGGESTED = [
   "What stack do I use most often?",
 ];
 
-export default function ChatPanel() {
+export default function ChatPanel({ queuedQuestion }: { queuedQuestion?: QueuedQuestion | null }) {
   const [mode, setMode] = useState<Mode>("concise");
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [msgs, setMsgs] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
+  const lastQueuedId = useRef<number | null>(null);
+
+  const send = useCallback(
+    async (question: string) => {
+      const q = question.trim();
+      if (!q) return;
+
+      setBusy(true);
+      setMsgs((m) => [...m, { role: "user", content: q }]);
+      setInput("");
+
+      try {
+        const res = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: q, mode }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data?.error || "Request failed");
+        }
+
+        setMsgs((m) => [...m, { role: "assistant", content: data.answer }]);
+      } catch {
+        setMsgs((m) => [
+          ...m,
+          {
+            role: "assistant",
+            content:
+              "Sorry — I couldn’t reach the AI backend. Check your `.env.local` and server logs, then try again.",
+          },
+        ]);
+      } finally {
+        setBusy(false);
+      }
+    },
+    [mode]
+  );
+
+  useEffect(() => {
+    if (!queuedQuestion) return;
+    if (queuedQuestion.id === lastQueuedId.current) return;
+
+    lastQueuedId.current = queuedQuestion.id;
+    send(queuedQuestion.text);
+  }, [queuedQuestion, send]);
 
   const canSend = useMemo(() => input.trim().length > 0 && !busy, [input, busy]);
-
-  async function send(question: string) {
-    const q = question.trim();
-    if (!q) return;
-
-    setBusy(true);
-    setMsgs((m) => [...m, { role: "user", content: q }]);
-    setInput("");
-
-    try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: q, mode }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data?.error || "Request failed");
-      }
-
-      setMsgs((m) => [...m, { role: "assistant", content: data.answer }]);
-    } catch (e: any) {
-      setMsgs((m) => [
-        ...m,
-        {
-          role: "assistant",
-          content:
-            "Sorry — I couldn’t reach the AI backend. Check your `.env.local` and server logs, then try again.",
-        },
-      ]);
-    } finally {
-      setBusy(false);
-    }
-  }
 
   return (
     <section className="mt-8 rounded-2xl border border-zinc-200 bg-white/60 p-5 shadow-sm backdrop-blur">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="text-xs font-semibold tracking-wide text-zinc-500">ASK MY AI</div>
-          <h3 className="mt-1 text-sm font-semibold text-zinc-900">
-            Ask questions about my experience & projects
-          </h3>
+          <h3 className="mt-1 text-sm font-semibold text-zinc-900">Ask questions about my experience & projects</h3>
         </div>
 
         <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-2 py-1 shadow-sm">
@@ -103,9 +118,7 @@ export default function ChatPanel() {
           <div key={i} className={m.role === "user" ? "text-right" : "text-left"}>
             <div
               className={`inline-block max-w-[92%] rounded-2xl border px-3 py-2 text-sm leading-6 whitespace-pre-wrap break-words ${
-                m.role === "user"
-                  ? "border-zinc-900 bg-zinc-900 text-white"
-                  : "border-zinc-200 bg-white text-zinc-800"
+                m.role === "user" ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-200 bg-white text-zinc-800"
               }`}
             >
               {m.content}
