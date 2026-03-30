@@ -75,7 +75,6 @@ const HIGHLIGHTS = [
 export default function Home() {
   const [mode, setMode] = useState<Mode>("concise");
   const [variant, setVariant] = useState<VersionKey>(DEFAULT_VARIANT);
-  const [queuedQuestion, setQueuedQuestion] = useState<{ id: number; text: string } | null>(null);
 
   const orderedSections = useMemo(() => {
     const lookup = {
@@ -155,27 +154,6 @@ export default function Home() {
 
             <section className="mt-8 rounded-3xl border border-zinc-200/80 bg-white/70 p-5 shadow-sm backdrop-blur">
               <div className="text-[11px] font-semibold tracking-wide text-zinc-500">ASK MY AI ABOUT ME</div>
-
-              <div className="mt-3 flex flex-wrap gap-2">
-                {[
-                  "Summarize my experience for a SWE role",
-                  "What are my strongest technical skills?",
-                  "Which projects show backend skills?",
-                  "How do I approach engineering problems?",
-                  "What tech stack do I use most?",
-                ].map((q) => (
-                  <button
-                    key={q}
-                    className="rounded-full border border-zinc-200 bg-white/70 px-3 py-2 text-xs text-zinc-700 shadow-sm backdrop-blur hover:bg-white"
-                    onClick={() => {
-                      setQueuedQuestion({ id: Date.now(), text: q });
-                    }}
-                  >
-                    {q}
-                  </button>
-                ))}
-              </div>
-
               <div className="mt-4">
                 <ChatPanel queuedQuestion={queuedQuestion} />
               </div>
