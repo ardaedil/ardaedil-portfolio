@@ -2,7 +2,7 @@
 
 I’m a Computer Science student (BSE) at the University of Michigan with a strong interest in building systems that are both technically rigorous and genuinely useful to people. I enjoy working on problems where requirements are ambiguous, constraints are real, and ownership matters.
 
-I’m originally from Istanbul, Turkey, and I’m currently based in Ann Arbor, Michigan. Outside of engineering, I’m deeply interested in soccer — I support Galatasaray and play futsal with Wolverine F.C. at Michigan.
+I’m originally from Istanbul, Turkey, and I’m currently based in Ann Arbor, Michigan. Outside of engineering, I’m deeply interested in soccer — I support Galatasaray and play futsal with Wolverine F.C. at Michigan. I also serve as President of the Turkish Student Association (TSA) at U-M.
 
 ## How I Think as an Engineer
 
