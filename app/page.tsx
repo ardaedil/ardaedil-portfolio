@@ -155,7 +155,7 @@ export default function Home() {
             <section className="mt-8 rounded-3xl border border-zinc-200/80 bg-white/70 p-5 shadow-sm backdrop-blur">
               <div className="text-[11px] font-semibold tracking-wide text-zinc-500">ASK MY AI ABOUT ME</div>
               <div className="mt-4">
-                <ChatPanel />
+                <ChatPanel queuedQuestion={queuedQuestion} />
               </div>
             </section>
 
