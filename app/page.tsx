@@ -22,6 +22,7 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
     { label: "Full-Stack", icon: "⧉" },
     { label: "AI-augmented apps", icon: "✦" },
     { label: "Ann Arbor / Istanbul", icon: "⌂" },
+    { label: "TSA President", icon: "★" },
     { label: "Available to work", icon: "●" },
   ],
   studio: [
@@ -30,12 +31,14 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
     { label: "Product Thinking", icon: "△" },
     { label: "Rapid Prototyping", icon: "↻" },
     { label: "Team Collaborator", icon: "✚" },
+    { label: "TSA President", icon: "★" },
   ],
   command: [
     { label: "System Design", icon: "#" },
     { label: "Backend APIs", icon: ">_" },
     { label: "Observability", icon: "⎈" },
     { label: "AI Tooling", icon: "λ" },
+    { label: "TSA President", icon: "★" },
     { label: "Internship-ready", icon: "●" },
   ],
   hybrid: [
@@ -43,19 +46,20 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
     { label: "Engineer depth", icon: "⚙" },
     { label: "Story + Metrics", icon: "↔" },
     { label: "Fast navigation", icon: "⌘K" },
+    { label: "TSA President", icon: "★" },
     { label: "Open to internships", icon: "●" },
   ],
 };
 
 const BLURB_BY_VARIANT: Record<VersionKey, string> = {
   editorial:
-    "I’m a sophomore studying Computer Science (BSE) at the University of Michigan, originally from Istanbul, Turkey. I build full-stack, AI-augmented projects and I’m currently looking for a software engineering internship.",
+    "I’m a sophomore studying Computer Science (BSE) at the University of Michigan, originally from Istanbul, Turkey. I build full-stack, AI-augmented projects and I’m currently looking for a software engineering internship. I also serve as President of the Turkish Student Association (TSA).",
   studio:
-    "I’m a sophomore CS student at the University of Michigan who loves building playful yet practical products. I explore HCI + AI through rapid experiments, then ship polished full-stack experiences.",
+    "I’m a sophomore CS student at the University of Michigan who loves building playful yet practical products. I explore HCI + AI through rapid experiments, then ship polished full-stack experiences, while serving as President of the Turkish Student Association (TSA).",
   command:
-    "Computer Science (BSE), University of Michigan. Focus: robust backend systems, AI-assisted workflows, and measurable engineering outcomes. Seeking software engineering internship opportunities.",
+    "Computer Science (BSE), University of Michigan. Focus: robust backend systems, AI-assisted workflows, and measurable engineering outcomes. Seeking software engineering internship opportunities, and I currently serve as President of the Turkish Student Association (TSA).",
   hybrid:
-    "I combine clear storytelling for non-technical readers with deep technical signal for engineers: full-stack builds, AI-augmented product development, and a strong execution mindset.",
+    "I combine clear storytelling for non-technical readers with deep technical signal for engineers: full-stack builds, AI-augmented product development, a strong execution mindset, and leadership as President of the Turkish Student Association (TSA).",
 };
 
 const SECTION_ORDER: Record<VersionKey, Array<"experience" | "projects" | "courses" | "skills">> = {
@@ -102,7 +106,7 @@ export default function Home() {
                       <br />
                       Outside of engineering, I’m usually watching or playing soccer — I support Galatasaray,
                       and I play for the Michigan futsal club Wolverine F.C.. I’m also involved in Innovation
-                      for Impact, a student-led technology consulting organization.
+                      for Impact, a student-led technology consulting organization, and I serve as President of the Turkish Student Association (TSA).
                     </>
                   )}
                 </p>
