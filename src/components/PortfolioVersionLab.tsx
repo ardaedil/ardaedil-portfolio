@@ -1,8 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
-
-type VersionKey = "editorial" | "studio" | "command" | "hybrid";
+export type VersionKey = "editorial" | "studio" | "command" | "hybrid";
 
 type Version = {
   key: VersionKey;
@@ -57,18 +55,25 @@ const VERSIONS: Version[] = [
   },
 ];
 
-export default function PortfolioVersionLab() {
-  const [active, setActive] = useState<VersionKey>("editorial");
-  const version = useMemo(() => VERSIONS.find((v) => v.key === active) ?? VERSIONS[0], [active]);
+export const DEFAULT_VARIANT: VersionKey = "editorial";
+
+export default function PortfolioVersionLab({
+  activeVariant,
+  onChange,
+}: {
+  activeVariant: VersionKey;
+  onChange: (variant: VersionKey) => void;
+}) {
+  const version = VERSIONS.find((v) => v.key === activeVariant) ?? VERSIONS[0];
 
   return (
     <section className="mt-8 rounded-3xl border border-zinc-200/80 bg-white/75 p-5 shadow-sm backdrop-blur">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <div className="text-[11px] font-semibold tracking-wide text-zinc-500">INTERACTIVE CONCEPT LAB</div>
-          <h2 className="mt-1 text-lg font-semibold text-zinc-900">Try different portfolio versions</h2>
+          <div className="text-[11px] font-semibold tracking-wide text-zinc-500">GLOBAL EXPERIENCE CONTROLLER</div>
+          <h2 className="mt-1 text-lg font-semibold text-zinc-900">Switch the entire page mode</h2>
           <p className="mt-1 text-sm text-zinc-600">
-            Pick a direction to preview the UX strategy and interaction patterns.
+            Each mode changes section priority, visual tone, and how your profile story is presented.
           </p>
         </div>
       </div>
@@ -77,9 +82,9 @@ export default function PortfolioVersionLab() {
         {VERSIONS.map((item) => (
           <button
             key={item.key}
-            onClick={() => setActive(item.key)}
+            onClick={() => onChange(item.key)}
             className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
-              active === item.key
+              activeVariant === item.key
                 ? "border-zinc-900 bg-zinc-900 text-white"
                 : "border-zinc-200 bg-white/80 text-zinc-700 hover:bg-white"
             }`}

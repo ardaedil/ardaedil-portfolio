@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "eslint",
-  "test:screenshots": "playwright test tests/screenshots/homepage-variants.spec.ts",
-  "test:e2e": "playwright test"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test:screenshots": "playwright test tests/screenshots/homepage-variants.spec.ts"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",
