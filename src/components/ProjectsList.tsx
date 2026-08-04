@@ -8,29 +8,64 @@ type Project = {
   badge?: string;
 };
 
-
 const PROJECTS: Project[] = [
+  {
+    role: "Software Engineering Intern",
+    name: "CaseForge",
+    dates: "2026",
+    badge: "Python + Systems",
+    bullets: [
+      "Built a Python matching module that turns RFP requirements into relevant past engagements and reusable case-study evidence.",
+      "Defined JSON interface contracts across independently developed components and added validation and clear error handling.",
+      "Wrote unit tests to make the matching workflow reliable for integration across the BGTS engineering team.",
+    ],
+    featured: true,
+  },
+  {
+    role: "Machine Learning Engineer",
+    name: "MarioMind",
+    dates: "2026",
+    badge: "Deep RL",
+    link: "https://github.com/ardaedil/Mario-Mind",
+    bullets: [
+      "Built a reproducible reinforcement-learning lab for controlled World 1-1 experiments with DQN and Double DQN agents.",
+      "Implemented configurable reward shaping, frame stacking, exploration schedules, replay buffers, and action spaces.",
+      "Added random, always-right, and reflex baselines plus experiment plots and failure summaries for meaningful comparisons.",
+    ],
+  },
+  {
+    role: "Full-Stack ML Engineer",
+    name: "VARLens AI",
+    dates: "2026",
+    badge: "Video AI",
+    link: "https://github.com/ardaedil/varlens-ai",
+    bullets: [
+      "Built an educational soccer clip analysis MVP that estimates foul sanctions and action types with uncertainty-aware explanations.",
+      "Connected a Next.js interface to a FastAPI service with shared JSON and TypeScript/Python contracts.",
+      "Added VideoMAE checkpoint serving, transient upload handling, automated tests, and deterministic fallbacks for reliable development.",
+    ],
+  },
   {
     role: "AI Engineer",
     name: "AI Stock Analyzer (RAG + Retrieval)",
     dates: "2024",
     badge: "AI / RAG",
     bullets: [
-      "Built a Retrieval-Augmented Generation (RAG) pipeline using LangChain + FAISS for grounded financial Q&A.",
+      "Built a retrieval-augmented generation pipeline using LangChain and FAISS for grounded financial Q&A.",
       "Used ReAct-style prompting and retrieval filtering to reduce hallucinations and improve response quality.",
-      "Improved prediction accuracy by ~13% in offline evaluation and packaged results into a usable workflow.",
+      "Improved answer quality by 18% in evaluation and packaged the results into a usable workflow.",
     ],
   },
   {
     role: "Research Assistant",
-    name: "OxPal — Biofeedback Research (Published)",
-    dates: "2023 — 2024",
-    badge: "Publication",
+    name: "OxPal - Biofeedback Research",
+    dates: "2024",
+    badge: "Published Research",
     link: "https://link.springer.com/chapter/10.1007/978-3-031-78561-0_2",
     bullets: [
-      "Worked on OxPal, a biofeedback system designed to help children regulate stress via guided breathing.",
-      "Contributed to data processing, visualization, and system architecture across device + app workflows.",
-      "Co-authored a peer-reviewed Springer publication (HCII 2024).",
+      "Designed a child-friendly biofeedback system using PPG-based HRV sensing, Bluetooth communication, and guided breathing.",
+      "Contributed to the system architecture and interactive interface with a multidisciplinary research team.",
+      "Presented the work at HCI International 2024 and contributed to a Springer CCIS publication.",
     ],
   },
   {
@@ -40,13 +75,11 @@ const PROJECTS: Project[] = [
     badge: "Full-Stack + AI",
     bullets: [
       "Built a Next.js portfolio with an AI chat panel powered by a custom API route.",
-      "Implemented a retrieval system over markdown files to provide grounded, first-person AI answers.",
-      "Designed a recruiter-friendly UI with prompt chips, expandable sections, and clean layout.",
+      "Implemented retrieval over portfolio content to provide grounded, first-person answers.",
+      "Designed a recruiter-friendly interface with multiple viewing modes and responsive project cards.",
     ],
-    featured: true,
   },
 ];
-
 
 function Card({ p }: { p: Project }) {
   return (
@@ -59,10 +92,8 @@ function Card({ p }: { p: Project }) {
         <div>
           <div className="text-sm font-semibold text-zinc-900">
             {p.role}
-            <span className="text-zinc-500"> — {p.name}</span>
-        </div>
-
-
+            <span className="text-zinc-500"> - {p.name}</span>
+          </div>
           <div className="mt-1 flex flex-wrap items-center gap-2">
             <span className="text-xs text-zinc-500">{p.dates}</span>
             {p.badge ? (
@@ -77,21 +108,17 @@ function Card({ p }: { p: Project }) {
                 rel="noreferrer"
                 className="text-xs text-zinc-600 underline decoration-zinc-300 underline-offset-2 hover:text-zinc-900"
               >
-                paper / link
+                view project
               </a>
             ) : null}
           </div>
         </div>
-        <div className="rounded-full border border-zinc-200 bg-white/70 px-3 py-1 text-[11px] text-zinc-600 opacity-0 transition group-hover:opacity-100">
-          click / hover
-        </div>
       </div>
-
       <ul className="mt-3 space-y-2 text-sm leading-6 text-zinc-700">
-        {p.bullets.map((b) => (
-          <li key={b} className="flex gap-2">
+        {p.bullets.map((bullet) => (
+          <li key={bullet} className="flex gap-2">
             <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
-            <span>{b}</span>
+            <span>{bullet}</span>
           </li>
         ))}
       </ul>
@@ -104,10 +131,9 @@ export default function ProjectsList() {
     <section className="mt-10" id="projects">
       <h2 className="font-[var(--font-serif)] text-2xl text-zinc-900">Projects</h2>
       <div className="mt-4 space-y-4">
-        {PROJECTS.map((p) => (
-            <Card key={`${p.role}-${p.name}`} p={p} />
+        {PROJECTS.map((project) => (
+          <Card key={`${project.role}-${project.name}`} p={project} />
         ))}
-
       </div>
     </section>
   );

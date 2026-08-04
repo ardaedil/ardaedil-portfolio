@@ -36,7 +36,7 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
     { label: "Observability", icon: "⎈" },
     { label: "AI Tooling", icon: "λ" },
     { label: "TSA President", icon: "★" },
-    { label: "Internship-ready", icon: "●" },
+    { label: "BGTS SWE Intern", icon: "●" },
   ],
   hybrid: [
     { label: "Recruiter-friendly", icon: "✓" },
@@ -50,11 +50,11 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
 
 const BLURB_BY_VARIANT: Record<VersionKey, string> = {
   editorial:
-    "I’m a sophomore studying Computer Science (BSE) at the University of Michigan, originally from Istanbul, Turkey. I build full-stack, AI-augmented projects and I’m currently looking for a software engineering internship. I also serve as President of the Turkish Student Association (TSA).",
+    "I’m a Computer Science (BSE) student at the University of Michigan, originally from Istanbul, Turkey. I build full-stack and applied-AI systems, including CaseForge at BGTS, MarioMind, and VARLens AI. I also serve as President of the Turkish Student Association (TSA).",
   studio:
-    "I’m a sophomore CS student at the University of Michigan who loves building playful yet practical products. I explore HCI + AI through rapid experiments, then ship polished full-stack experiences, while serving as President of the Turkish Student Association (TSA).",
+    "I’m a University of Michigan CS student who builds playful but practical systems across applied AI, backend engineering, and full-stack product development. Recent work includes CaseForge at BGTS, MarioMind, and VARLens AI.",
   command:
-    "Computer Science (BSE), University of Michigan. Focus: robust backend systems, AI-assisted workflows, and measurable engineering outcomes. Seeking software engineering internship opportunities, and I currently serve as President of the Turkish Student Association (TSA).",
+    "Computer Science (BSE), University of Michigan. Focus: robust backend systems, AI-assisted workflows, and measurable engineering outcomes across CaseForge, MarioMind, and VARLens AI. President of the Turkish Student Association (TSA).",
   hybrid:
     "I combine clear storytelling for non-technical readers with deep technical signal for engineers: full-stack builds, AI-augmented product development, a strong execution mindset, and leadership as President of the Turkish Student Association (TSA).",
 };
@@ -68,8 +68,8 @@ const SECTION_ORDER: Record<VersionKey, Array<"experience" | "projects" | "cours
 
 const HIGHLIGHTS = [
   { label: "Leadership", value: "TSA President", icon: "★" },
-  { label: "Focus", value: "AI + Full-Stack", icon: "✦" },
-  { label: "Open Role", value: "SWE Internship", icon: "●" },
+  { label: "Focus", value: "Applied AI + Full-Stack", icon: "✦" },
+  { label: "Recent Experience", value: "BGTS SWE Intern", icon: "●" },
 ];
 
 export default function Home() {
