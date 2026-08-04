@@ -6,7 +6,7 @@ type SkillGroup = {
 const SKILLS: SkillGroup[] = [
   {
     title: "Languages",
-    skills: ["Java", "Python", "TypeScript", "JavaScript", "C++", "SQL"],
+    skills: ["Python", "Java", "C/C++", "TypeScript", "JavaScript", "SQL", "R"],
   },
   {
     title: "Frontend",
@@ -14,7 +14,7 @@ const SKILLS: SkillGroup[] = [
   },
   {
     title: "Backend",
-    skills: ["Node.js", "REST APIs", "PostgreSQL", "Authentication", "Caching"],
+    skills: ["FastAPI", "Node.js", "REST APIs", "SQLAlchemy", "SQLite", "JSON Contracts"],
   },
   {
     title: "AI / Data",
@@ -22,9 +22,10 @@ const SKILLS: SkillGroup[] = [
       "Retrieval-Augmented Generation (RAG)",
       "LangChain",
       "FAISS",
+      "PyTorch",
+      "VideoMAE",
+      "Deep Reinforcement Learning",
       "scikit-learn",
-      "Clustering",
-      "Forecasting",
     ],
   },
   {
