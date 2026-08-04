@@ -88,7 +88,7 @@ export default function Home() {
   }, [variant]);
 
   return (
-    <main className={`paper-bg paper-grain mesh-bg relative min-h-screen overflow-hidden mode-${variant}`}>
+    <main className={`paper-bg paper-grain mesh-bg relative min-h-screen overflow-x-clip mode-${variant}`}>
       <div className="ambient-orb ambient-orb-1" aria-hidden />
       <div className="ambient-orb ambient-orb-2" aria-hidden />
 
