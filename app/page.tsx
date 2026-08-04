@@ -50,11 +50,11 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
 
 const BLURB_BY_VARIANT: Record<VersionKey, string> = {
   editorial:
-    "I’m a Computer Science (BSE) student at the University of Michigan, originally from Istanbul, Turkey. I build full-stack and applied-AI systems, including CaseForge at BGTS, MarioMind, and VARLens AI. I also serve as President of the Turkish Student Association (TSA).",
+    "I’m a Computer Science (BSE) student at the University of Michigan, originally from Istanbul, Turkey. My recent work spans BGTS internship engineering on CaseForge plus projects like MarioMind and VARLens AI. I also serve as President of the Turkish Student Association (TSA).",
   studio:
-    "I’m a University of Michigan CS student who builds playful but practical systems across applied AI, backend engineering, and full-stack product development. Recent work includes CaseForge at BGTS, MarioMind, and VARLens AI.",
+    "I’m a University of Michigan CS student who builds playful but practical systems across applied AI, backend engineering, and full-stack product development. Recent work includes BGTS internship engineering on CaseForge plus MarioMind and VARLens AI.",
   command:
-    "Computer Science (BSE), University of Michigan. Focus: robust backend systems, AI-assisted workflows, and measurable engineering outcomes across CaseForge, MarioMind, and VARLens AI. President of the Turkish Student Association (TSA).",
+    "Computer Science (BSE), University of Michigan. Focus: robust backend systems, AI-assisted workflows, and measurable engineering outcomes across BGTS, MarioMind, and VARLens AI. President of the Turkish Student Association (TSA).",
   hybrid:
     "I combine clear storytelling for non-technical readers with deep technical signal for engineers: full-stack builds, AI-augmented product development, a strong execution mindset, and leadership as President of the Turkish Student Association (TSA).",
 };

@@ -4,6 +4,7 @@ type Experience = {
   dates: string;
   bullets: string[];
   featured?: boolean;
+  link?: string;
 };
 
 const EXPERIENCES: Experience[] = [
@@ -11,10 +12,11 @@ const EXPERIENCES: Experience[] = [
     title: "Software Engineering Intern",
     org: "BGTS",
     dates: "Jun 2026 - Aug 2026",
+    link: "https://github.com/emreakkoyunbgts/ForgeCase",
     bullets: [
-      "Partnered with proposal and engineering teams to translate RFP workflows into a Python matching module.",
-      "Surfaced relevant past engagements and reusable case-study evidence through the CaseForge workflow.",
-      "Defined JSON contracts and implemented validation, error handling, and unit tests across team-owned components.",
+      "Owned the CaseForge librarian module, which maps RFP requirements to the past engagements that best prove BGTS capabilities.",
+      "Built ranked matching with rationale support so proposal teams could find relevant evidence under deadline pressure.",
+      "Defined JSON contracts and implemented validation, error handling, and unit tests across team-owned pipeline components.",
     ],
     featured: true,
   },
@@ -63,7 +65,19 @@ function Card({ exp }: { exp: Experience }) {
             {exp.title}
             {exp.org ? <span className="text-zinc-500"> - {exp.org}</span> : null}
           </div>
-          <div className="mt-1 text-xs text-zinc-500">{exp.dates}</div>
+          <div className="mt-1 flex flex-wrap items-center gap-2">
+            <span className="text-xs text-zinc-500">{exp.dates}</span>
+            {exp.link ? (
+              <a
+                href={exp.link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs text-zinc-600 underline decoration-zinc-300 underline-offset-2 hover:text-zinc-900"
+              >
+                view repo
+              </a>
+            ) : null}
+          </div>
         </div>
       </div>
       <ul className="mt-3 space-y-2 text-sm leading-6 text-zinc-700">

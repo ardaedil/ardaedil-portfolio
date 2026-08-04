@@ -13,7 +13,7 @@ Relevant coursework includes Introduction to Artificial Intelligence and Data St
 ## Experience
 
 ### BGTS - Software Engineering Intern, Jun 2026 - Aug 2026
-- Partnered with proposal and engineering teams to translate RFP workflows into a Python matching module that surfaced relevant past engagements and reusable case-study evidence.
+- Owned the CaseForge librarian module, translating RFP requirements into ranked past-engagement matches with supporting rationale for proposal workflows.
 - Defined JSON interface contracts and implemented validation, error handling, and unit tests for reliable integration across CaseForge components.
 
 ### Setas Masterbatch - Supply Chain Analyst Intern, Jun 2025 - Aug 2025
