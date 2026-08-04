@@ -128,10 +128,12 @@ export async function POST(req: Request) {
       answer,
       sources: top.map((t) => t.id),
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error(err);
+    const message = err instanceof Error ? err.message : "Unexpected server error";
+
     return Response.json(
-      { error: err?.message || "Unexpected server error" },
+      { error: message },
       { status: 500 }
     );
   }
