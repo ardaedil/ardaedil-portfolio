@@ -10,18 +10,6 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    role: "Software Engineering Intern",
-    name: "CaseForge",
-    dates: "2026",
-    badge: "Python + Systems",
-    bullets: [
-      "Built a Python matching module that turns RFP requirements into relevant past engagements and reusable case-study evidence.",
-      "Defined JSON interface contracts across independently developed components and added validation and clear error handling.",
-      "Wrote unit tests to make the matching workflow reliable for integration across the BGTS engineering team.",
-    ],
-    featured: true,
-  },
-  {
     role: "Machine Learning Engineer",
     name: "MarioMind",
     dates: "2026",
