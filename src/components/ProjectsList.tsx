@@ -57,6 +57,18 @@ const PROJECTS: Project[] = [
     ],
   },
   {
+    role: "Software Engineer",
+    name: "Lore",
+    dates: "2025",
+    badge: "Mobile + Backend",
+    link: "https://github.com/Innovation-for-Impact/Lore",
+    bullets: [
+      "Worked on an Innovation for Impact mobile app for University of Michigan student community building.",
+      "Built React Native and Expo user-facing flows, navigation patterns, onboarding, and reusable UI components.",
+      "Integrated frontend features with Django REST Framework backend APIs and typed OpenAPI-generated contracts.",
+    ],
+  },
+  {
     role: "Full-Stack Engineer",
     name: "AI-Powered Portfolio Website",
     dates: "2026",

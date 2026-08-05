@@ -37,5 +37,8 @@ Built and evaluated a Python RAG pipeline with LangChain, OpenAI, FAISS, and Yah
 ### OxPal Biofeedback Research
 Designed a child-friendly biofeedback system using PPG-based HRV sensing, Bluetooth communication, and interactive breathing guidance. Presented the work at HCI International 2024 and contributed to a Springer CCIS publication.
 
+### Lore
+Worked on an Innovation for Impact mobile app for University of Michigan student community building, building React Native and Expo user-facing flows and integrating frontend features with Django REST Framework backend APIs.
+
 ## Leadership
 President of the University of Michigan Turkish Student Association since April 2026, leading a seven-member executive board.
