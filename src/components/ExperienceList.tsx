@@ -40,16 +40,6 @@ const EXPERIENCES: Experience[] = [
       "Reduced stockouts by 20% and enabled purchasing decisions 10 days earlier.",
     ],
   },
-  {
-    title: "Software Developer",
-    org: "Lore",
-    dates: "Jan 2025 - Apr 2025",
-    bullets: [
-      "Built full-stack product features using React and Node.js.",
-      "Worked across frontend and backend to ship user-facing flows and integrations.",
-      "Collaborated with designers and engineers to iterate quickly and deliver production features.",
-    ],
-  },
 ];
 
 function Card({ exp }: { exp: Experience }) {
