@@ -85,19 +85,19 @@ function Card({ p }: { p: Project }) {
   return (
     <div
       className={`group rounded-2xl border ${
-        p.featured ? "border-zinc-300" : "border-zinc-200"
-      } bg-white/60 p-5 shadow-sm backdrop-blur transition hover:shadow-md`}
+        p.featured ? "border-[#b8cfe0]" : "border-[#d8d2c5]"
+      } bg-[#fbfaf7]/70 p-5 shadow-sm backdrop-blur transition hover:bg-[#fffefb] hover:shadow-md`}
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <div className="text-sm font-semibold text-zinc-900">
+          <div className="text-sm font-semibold text-[#1d1b17]">
             {p.role}
-            <span className="text-zinc-500"> - {p.name}</span>
+            <span className="text-[#716b61]"> - {p.name}</span>
           </div>
           <div className="mt-1 flex flex-wrap items-center gap-2">
-            <span className="text-xs text-zinc-500">{p.dates}</span>
+            <span className="text-xs text-[#756f65]">{p.dates}</span>
             {p.badge ? (
-              <span className="rounded-full border border-zinc-200 bg-white/70 px-2 py-[2px] text-[11px] text-zinc-600">
+              <span className="rounded-full border border-[#d8d2c5] bg-[#f3efe7]/80 px-2 py-[2px] text-[11px] text-[#655f55]">
                 {p.badge}
               </span>
             ) : null}
@@ -106,7 +106,7 @@ function Card({ p }: { p: Project }) {
                 href={p.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-zinc-600 underline decoration-zinc-300 underline-offset-2 hover:text-zinc-900"
+                className="text-xs text-[#4d7793] underline decoration-[#b8cfe0] underline-offset-2 hover:text-[#111111]"
               >
                 view project
               </a>
@@ -114,10 +114,10 @@ function Card({ p }: { p: Project }) {
           </div>
         </div>
       </div>
-      <ul className="mt-3 space-y-2 text-sm leading-6 text-zinc-700">
+      <ul className="mt-3 space-y-2 text-sm leading-6 text-[#49443d]">
         {p.bullets.map((bullet) => (
           <li key={bullet} className="flex gap-2">
-            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
+            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#88a9bd]" />
             <span>{bullet}</span>
           </li>
         ))}
@@ -129,7 +129,7 @@ function Card({ p }: { p: Project }) {
 export default function ProjectsList() {
   return (
     <section className="mt-10" id="projects">
-      <h2 className="font-[var(--font-serif)] text-2xl text-zinc-900">Projects</h2>
+      <h2 className="font-[var(--font-serif)] text-3xl text-[#111111]">Projects</h2>
       <div className="mt-4 space-y-4">
         {PROJECTS.map((project) => (
           <Card key={`${project.role}-${project.name}`} p={project} />

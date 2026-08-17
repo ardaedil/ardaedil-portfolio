@@ -92,20 +92,20 @@ export default function Home() {
       <div className="ambient-orb ambient-orb-1" aria-hidden />
       <div className="ambient-orb ambient-orb-2" aria-hidden />
 
-      <div className="relative z-10 w-full px-4 py-10 sm:px-6 lg:px-10 xl:px-14">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(240px,320px)_minmax(0,1fr)] lg:gap-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1480px] px-4 py-8 sm:px-6 lg:px-10 xl:px-12">
+        <div className="institutional-shell grid grid-cols-1 gap-10 rounded-[30px] p-5 sm:p-7 lg:grid-cols-[minmax(240px,320px)_minmax(0,1fr)] lg:gap-12 xl:p-10">
           <StickyNote />
 
           <div
             className="w-full justify-self-start transition-all duration-300"
             style={{ maxWidth: variant === "command" ? "clamp(920px, 75vw, 1500px)" : "clamp(860px, 70vw, 1400px)" }}
           >
-            <section className="gradient-border rounded-[28px] p-[1px]">
-              <div className="soft-card rounded-[27px] p-6 sm:p-7">
+            <section className="gradient-border rounded-[18px] p-[1px]">
+              <div className="soft-card rounded-[17px] p-6 sm:p-8">
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h1 className="font-[var(--app-font-serif)] text-5xl tracking-tight text-zinc-900">Arda Edil</h1>
-                    <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-700 transition-opacity duration-200">
+                    <h1 className="font-[var(--app-font-serif)] text-5xl tracking-tight text-[#101010] sm:text-6xl">Arda Edil</h1>
+                    <p className="mt-4 max-w-3xl text-sm leading-6 text-[#45413a] transition-opacity duration-200">
                       {mode === "concise" ? BLURB_BY_VARIANT[variant] : (
                         <>
                           {BLURB_BY_VARIANT[variant]}
@@ -121,11 +121,11 @@ export default function Home() {
 
                   <div className="flex items-center gap-3">
                     <button
-                      className="rounded-full border border-zinc-200 bg-white/80 p-2 shadow-sm backdrop-blur hover:bg-white"
+                      className="rounded-full border border-[#d8d2c5] bg-[#fbfaf7] p-2 shadow-sm backdrop-blur hover:bg-white"
                       aria-label="Audio"
                       title="Audio (optional feature)"
                     >
-                      <span className="text-zinc-600">🔊</span>
+                      <span className="text-[#4c6274]">🔊</span>
                     </button>
 
                     <ModeToggle mode={mode} setMode={setMode} />
@@ -138,9 +138,9 @@ export default function Home() {
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-3">
                   {HIGHLIGHTS.map((item) => (
-                    <div key={item.label} className="rounded-2xl border border-zinc-200/80 bg-white/85 p-3 shadow-sm backdrop-blur">
-                      <div className="text-xs font-semibold tracking-wide text-zinc-500">{item.label}</div>
-                      <div className="mt-1 flex items-center gap-2 text-sm font-medium text-zinc-800">
+                    <div key={item.label} className="rounded-xl border border-[#d9d4c8] bg-[#fbfaf7]/85 p-3 shadow-sm backdrop-blur">
+                      <div className="text-xs font-semibold tracking-wide text-[#756f65]">{item.label}</div>
+                      <div className="mt-1 flex items-center gap-2 text-sm font-medium text-[#24211d]">
                         <span>{item.icon}</span>
                         <span>{item.value}</span>
                       </div>
@@ -152,8 +152,8 @@ export default function Home() {
 
             <PortfolioVersionLab activeVariant={variant} onChange={setVariant} />
 
-            <section className="mt-8 rounded-3xl border border-zinc-200/80 bg-white/70 p-5 shadow-sm backdrop-blur">
-              <div className="text-[11px] font-semibold tracking-wide text-zinc-500">ASK MY AI ABOUT ME</div>
+            <section className="mt-8 rounded-[18px] border border-[#d8d2c5] bg-[#fbfaf7]/70 p-5 shadow-sm backdrop-blur">
+              <div className="text-[11px] font-semibold tracking-wide text-[#756f65]">ASK MY AI ABOUT ME</div>
               <div className="mt-4">
                 <ChatPanel />
               </div>

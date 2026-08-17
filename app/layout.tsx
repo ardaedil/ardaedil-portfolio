@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-zinc-50 text-zinc-900">{children}</body>
+      <body className="min-h-screen bg-[#050505] text-[#151515]">{children}</body>
     </html>
   );
 }

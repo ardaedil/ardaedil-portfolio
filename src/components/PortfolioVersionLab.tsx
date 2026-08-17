@@ -21,7 +21,7 @@ const VERSIONS: Version[] = [
     blurb:
       "A polished magazine-style flow that emphasizes outcomes, internships, and impact metrics first.",
     interactions: ["Sticky section progress", "Expandable project case studies", "Quick compare: skills by role"],
-    accentClass: "from-amber-200/70 to-rose-200/70",
+    accentClass: "from-[#e8e2d5] to-[#cfe0ea]",
   },
   {
     key: "studio",
@@ -31,7 +31,7 @@ const VERSIONS: Version[] = [
     blurb:
       "A creative lab aesthetic with motion, timeline storytelling, and interactive project playground cards.",
     interactions: ["Cursor spotlight cards", "Project sandbox demos", "Animated skills constellation"],
-    accentClass: "from-cyan-200/70 to-indigo-200/70",
+    accentClass: "from-[#d7e8ef] to-[#dad6cc]",
   },
   {
     key: "command",
@@ -41,7 +41,7 @@ const VERSIONS: Version[] = [
     blurb:
       "A keyboard-first profile with measurable engineering signals, architecture diagrams, and benchmark snippets.",
     interactions: ["Command palette navigation", "Live architecture toggles", "Role-fit score simulator"],
-    accentClass: "from-emerald-200/70 to-lime-200/70",
+    accentClass: "from-[#dbe6df] to-[#cbd8d1]",
   },
   {
     key: "hybrid",
@@ -51,7 +51,7 @@ const VERSIONS: Version[] = [
     blurb:
       "A blend of clean recruiter-first structure and rich technical depth, with dynamic CTAs that adapt to visitor intent.",
     interactions: ["Intent-based content priority", "Adaptive CTA strip", "One-click resume + project deep links"],
-    accentClass: "from-fuchsia-200/70 to-violet-200/70",
+    accentClass: "from-[#e6ddd4] to-[#cbd9e2]",
   },
 ];
 
@@ -67,12 +67,12 @@ export default function PortfolioVersionLab({
   const version = VERSIONS.find((v) => v.key === activeVariant) ?? VERSIONS[0];
 
   return (
-    <section className="mt-8 rounded-3xl border border-zinc-200/80 bg-white/75 p-5 shadow-sm backdrop-blur">
+    <section className="mt-8 rounded-[18px] border border-[#d8d2c5] bg-[#fbfaf7]/75 p-5 shadow-sm backdrop-blur">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <div className="text-[11px] font-semibold tracking-wide text-zinc-500">GLOBAL EXPERIENCE CONTROLLER</div>
-          <h2 className="mt-1 text-lg font-semibold text-zinc-900">Switch the entire page mode</h2>
-          <p className="mt-1 text-sm text-zinc-600">
+          <div className="text-[11px] font-semibold tracking-wide text-[#756f65]">GLOBAL EXPERIENCE CONTROLLER</div>
+          <h2 className="mt-1 text-lg font-semibold text-[#1d1b17]">Switch the entire page mode</h2>
+          <p className="mt-1 text-sm text-[#5d574e]">
             Each mode changes section priority, visual tone, and how your profile story is presented.
           </p>
         </div>
@@ -85,8 +85,8 @@ export default function PortfolioVersionLab({
             onClick={() => onChange(item.key)}
             className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
               activeVariant === item.key
-                ? "border-zinc-900 bg-zinc-900 text-white"
-                : "border-zinc-200 bg-white/80 text-zinc-700 hover:bg-white"
+                ? "border-[#111111] bg-[#111111] text-white"
+                : "border-[#d8d2c5] bg-[#fbfaf7]/80 text-[#4f4a42] hover:bg-[#fffefb]"
             }`}
           >
             {item.label}
@@ -94,25 +94,25 @@ export default function PortfolioVersionLab({
         ))}
       </div>
 
-      <div className={`mt-4 rounded-2xl border border-zinc-200 bg-gradient-to-br ${version.accentClass} p-[1px]`}>
-        <div className="rounded-2xl bg-white/90 p-4">
+      <div className={`mt-4 rounded-[16px] border border-[#d8d2c5] bg-gradient-to-br ${version.accentClass} p-[1px]`}>
+        <div className="rounded-[15px] bg-[#fffefb]/92 p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
-              <h3 className="text-base font-semibold text-zinc-900">{version.label}</h3>
-              <p className="text-xs text-zinc-500">{version.audience}</p>
+              <h3 className="text-base font-semibold text-[#1d1b17]">{version.label}</h3>
+              <p className="text-xs text-[#756f65]">{version.audience}</p>
             </div>
-            <span className="rounded-full bg-zinc-900 px-2.5 py-1 text-[10px] tracking-wide text-white uppercase">
+            <span className="rounded-full bg-[#111111] px-2.5 py-1 text-[10px] tracking-wide text-white uppercase">
               {version.vibe}
             </span>
           </div>
 
-          <p className="mt-3 text-sm leading-6 text-zinc-700">{version.blurb}</p>
+          <p className="mt-3 text-sm leading-6 text-[#49443d]">{version.blurb}</p>
 
           <div className="mt-4 grid gap-2 sm:grid-cols-3">
             {version.interactions.map((interaction) => (
               <div
                 key={interaction}
-                className="rounded-xl border border-zinc-200 bg-white/80 p-3 text-xs text-zinc-700 shadow-sm transition hover:-translate-y-0.5"
+                className="rounded-xl border border-[#d8d2c5] bg-[#fbfaf7]/80 p-3 text-xs text-[#4f4a42] shadow-sm transition hover:-translate-y-0.5"
               >
                 {interaction}
               </div>

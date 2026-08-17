@@ -17,8 +17,8 @@ export function TagPills({ tags }: { tags: Tag[] }) {
           "hover:-translate-y-0.5 hover:rotate-[-1deg] hover:shadow-md active:translate-y-0";
 
         const style = isAvailable
-          ? "border-emerald-200 bg-emerald-50/80 text-emerald-800"
-          : "border-zinc-200 bg-white/65 text-zinc-700";
+          ? "border-[#abcce2] bg-[#d7ebf7]/75 text-[#24475d]"
+          : "border-[#d8d2c5] bg-[#fbfaf7]/65 text-[#474038]";
 
         return (
           <span
@@ -28,7 +28,7 @@ export function TagPills({ tags }: { tags: Tag[] }) {
             {t.icon ? (
               <span
                 className={
-                  isAvailable ? "text-emerald-600" : "text-zinc-500"
+                  isAvailable ? "text-[#4f88aa]" : "text-[#756f65]"
                 }
               >
                 {t.icon}
