@@ -10,13 +10,13 @@ export default function ModeToggle({
   setMode: (m: Mode) => void;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-2 py-1 shadow-sm backdrop-blur">
+    <div className="inline-flex items-center gap-2 rounded-full border border-[#d8d2c5] bg-[#fbfaf7]/75 px-2 py-1 shadow-sm backdrop-blur">
       <button
         onClick={() => setMode("concise")}
         className={`rounded-full px-3 py-1 text-xs font-medium transition ${
           mode === "concise"
-            ? "bg-zinc-900 text-white"
-            : "text-zinc-700 hover:bg-zinc-100"
+            ? "bg-[#111111] text-white"
+            : "text-[#4f4a42] hover:bg-[#eee9df]"
         }`}
         aria-pressed={mode === "concise"}
       >
@@ -26,8 +26,8 @@ export default function ModeToggle({
         onClick={() => setMode("detailed")}
         className={`rounded-full px-3 py-1 text-xs font-medium transition ${
           mode === "detailed"
-            ? "bg-zinc-900 text-white"
-            : "text-zinc-700 hover:bg-zinc-100"
+            ? "bg-[#111111] text-white"
+            : "text-[#4f4a42] hover:bg-[#eee9df]"
         }`}
         aria-pressed={mode === "detailed"}
       >

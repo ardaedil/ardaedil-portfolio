@@ -46,23 +46,23 @@ function Card({ exp }: { exp: Experience }) {
   return (
     <div
       className={`group rounded-2xl border ${
-        exp.featured ? "border-zinc-300" : "border-zinc-200"
-      } bg-white/60 p-5 shadow-sm backdrop-blur transition hover:shadow-md`}
+        exp.featured ? "border-[#b8cfe0]" : "border-[#d8d2c5]"
+      } bg-[#fbfaf7]/70 p-5 shadow-sm backdrop-blur transition hover:bg-[#fffefb] hover:shadow-md`}
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <div className="text-sm font-semibold text-zinc-900">
+          <div className="text-sm font-semibold text-[#1d1b17]">
             {exp.title}
-            {exp.org ? <span className="text-zinc-500"> - {exp.org}</span> : null}
+            {exp.org ? <span className="text-[#716b61]"> - {exp.org}</span> : null}
           </div>
           <div className="mt-1 flex flex-wrap items-center gap-2">
-            <span className="text-xs text-zinc-500">{exp.dates}</span>
+            <span className="text-xs text-[#756f65]">{exp.dates}</span>
             {exp.link ? (
               <a
                 href={exp.link}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-zinc-600 underline decoration-zinc-300 underline-offset-2 hover:text-zinc-900"
+                className="text-xs text-[#4d7793] underline decoration-[#b8cfe0] underline-offset-2 hover:text-[#111111]"
               >
                 view repo
               </a>
@@ -70,10 +70,10 @@ function Card({ exp }: { exp: Experience }) {
           </div>
         </div>
       </div>
-      <ul className="mt-3 space-y-2 text-sm leading-6 text-zinc-700">
+      <ul className="mt-3 space-y-2 text-sm leading-6 text-[#49443d]">
         {exp.bullets.map((bullet) => (
           <li key={bullet} className="flex gap-2">
-            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-400" />
+            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#88a9bd]" />
             <span>{bullet}</span>
           </li>
         ))}
@@ -85,7 +85,7 @@ function Card({ exp }: { exp: Experience }) {
 export default function ExperienceList() {
   return (
     <section className="mt-10" id="experience">
-      <h2 className="font-[var(--font-serif)] text-2xl text-zinc-900">Experience</h2>
+      <h2 className="font-[var(--font-serif)] text-3xl text-[#111111]">Experience</h2>
       <div className="mt-4 space-y-4">
         {EXPERIENCES.map((experience) => (
           <Card key={`${experience.title}-${experience.org}`} exp={experience} />

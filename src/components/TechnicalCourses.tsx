@@ -52,7 +52,7 @@ const COURSES: Course[] = [
 export default function TechnicalCourses() {
   return (
     <section className="mt-16">
-      <h2 className="font-[var(--font-serif)] text-2xl text-zinc-900">
+      <h2 className="font-[var(--font-serif)] text-3xl text-[#111111]">
         Technical Coursework
       </h2>
 
@@ -60,12 +60,12 @@ export default function TechnicalCourses() {
         {COURSES.map((c) => (
           <div
             key={c.code}
-            className="rounded-2xl border border-zinc-200 bg-white/60 p-5 shadow-sm backdrop-blur"
+            className="rounded-2xl border border-[#d8d2c5] bg-[#fbfaf7]/70 p-5 shadow-sm backdrop-blur"
           >
-            <div className="text-sm font-semibold text-zinc-900">
-              {c.code} <span className="text-zinc-500">— {c.title}</span>
+            <div className="text-sm font-semibold text-[#1d1b17]">
+              {c.code} <span className="text-[#716b61]">— {c.title}</span>
             </div>
-            <p className="mt-2 text-sm leading-6 text-zinc-700">
+            <p className="mt-2 text-sm leading-6 text-[#49443d]">
               {c.description}
             </p>
           </div>
