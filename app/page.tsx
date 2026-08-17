@@ -16,6 +16,7 @@ import PortfolioVersionLab, { DEFAULT_VARIANT, VersionKey } from "../src/compone
 const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
   editorial: [
     { label: "SWE", icon: "⌘" },
+    { label: "Founder, AgentSEO", icon: "✦" },
     { label: "Full-Stack", icon: "⧉" },
     { label: "AI-augmented apps", icon: "✦" },
     { label: "Ann Arbor / Istanbul", icon: "⌂" },
@@ -24,6 +25,7 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
   ],
   studio: [
     { label: "Creative Engineering", icon: "✶" },
+    { label: "AgentSEO Founder", icon: "✦" },
     { label: "Interactive Demos", icon: "◉" },
     { label: "Product Thinking", icon: "△" },
     { label: "Rapid Prototyping", icon: "↻" },
@@ -33,6 +35,7 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
   command: [
     { label: "System Design", icon: "#" },
     { label: "Backend APIs", icon: ">_" },
+    { label: "AgentSEO", icon: "✦" },
     { label: "Observability", icon: "⎈" },
     { label: "AI Tooling", icon: "λ" },
     { label: "TSA President", icon: "★" },
@@ -41,6 +44,7 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
   hybrid: [
     { label: "Recruiter-friendly", icon: "✓" },
     { label: "Engineer depth", icon: "⚙" },
+    { label: "Startup builder", icon: "✦" },
     { label: "Story + Metrics", icon: "↔" },
     { label: "Fast navigation", icon: "⌘K" },
     { label: "TSA President", icon: "★" },
@@ -50,13 +54,13 @@ const TAGS_BY_VARIANT: Record<VersionKey, { label: string; icon: string }[]> = {
 
 const BLURB_BY_VARIANT: Record<VersionKey, string> = {
   editorial:
-    "I’m a Computer Science (BSE) student at the University of Michigan, originally from Istanbul, Turkey. My recent work spans BGTS internship engineering on CaseForge plus projects like MarioMind and VARLens AI. I also serve as President of the Turkish Student Association (TSA).",
+    "I’m a Computer Science (BSE) student at the University of Michigan, originally from Istanbul, Turkey. I’m building AgentSEO, a startup focused on AI-agent reliability for APIs, alongside BGTS internship engineering on CaseForge and projects like MarioMind and VARLens AI.",
   studio:
-    "I’m a University of Michigan CS student who builds playful but practical systems across applied AI, backend engineering, and full-stack product development. Recent work includes BGTS internship engineering on CaseForge plus MarioMind and VARLens AI.",
+    "I’m a University of Michigan CS student and AgentSEO founder who builds playful but practical systems across applied AI, backend engineering, and full-stack product development. Recent work includes CaseForge, MarioMind, and VARLens AI.",
   command:
-    "Computer Science (BSE), University of Michigan. Focus: robust backend systems, AI-assisted workflows, and measurable engineering outcomes across BGTS, MarioMind, and VARLens AI. President of the Turkish Student Association (TSA).",
+    "Computer Science (BSE), University of Michigan. Focus: robust backend systems, AI-agent reliability, and measurable engineering outcomes across AgentSEO, BGTS, MarioMind, and VARLens AI. President of the Turkish Student Association (TSA).",
   hybrid:
-    "I combine clear storytelling for non-technical readers with deep technical signal for engineers: full-stack builds, AI-augmented product development, a strong execution mindset, and leadership as President of the Turkish Student Association (TSA).",
+    "I combine clear storytelling for non-technical readers with deep technical signal for engineers: startup ownership through AgentSEO, full-stack builds, AI-augmented product development, and leadership as President of the Turkish Student Association (TSA).",
 };
 
 const SECTION_ORDER: Record<VersionKey, Array<"experience" | "projects" | "courses" | "skills">> = {
@@ -67,9 +71,9 @@ const SECTION_ORDER: Record<VersionKey, Array<"experience" | "projects" | "cours
 };
 
 const HIGHLIGHTS = [
+  { label: "Startup", value: "Founder, AgentSEO", icon: "✦" },
   { label: "Leadership", value: "TSA President", icon: "★" },
   { label: "Focus", value: "Applied AI + Full-Stack", icon: "✦" },
-  { label: "Recent Experience", value: "BGTS SWE Intern", icon: "●" },
 ];
 
 export default function Home() {

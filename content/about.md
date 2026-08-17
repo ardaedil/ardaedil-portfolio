@@ -1,6 +1,6 @@
 # About Me
 
-I’m a Computer Science student (BSE) at the University of Michigan with a strong interest in building systems that are both technically rigorous and genuinely useful to people. I enjoy working on problems where requirements are ambiguous, constraints are real, and ownership matters.
+I’m a Computer Science student (BSE) at the University of Michigan with a strong interest in building systems that are both technically rigorous and genuinely useful to people. I’m also building AgentSEO, my startup focused on measuring and improving how reliably AI agents operate API interfaces. I enjoy working on problems where requirements are ambiguous, constraints are real, and ownership matters.
 
 I’m originally from Istanbul, Turkey, and I’m currently based in Ann Arbor, Michigan. Outside of engineering, I’m deeply interested in soccer — I support Galatasaray and play futsal with Wolverine F.C. at Michigan. I also serve as President of the Turkish Student Association (TSA) at U-M.
 
@@ -20,6 +20,7 @@ I’m comfortable working independently, but I also value tight feedback loops w
 I especially enjoy:
 - Full-stack systems where I can own features end-to-end
 - AI-augmented products where models are grounded in real data
+- Agent reliability, tool-use evaluation, and API-interface design
 - Backend-heavy work involving data processing, APIs, and system design
 - Projects where requirements evolve and I need to adapt quickly
 

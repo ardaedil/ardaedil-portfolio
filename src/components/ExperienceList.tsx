@@ -9,6 +9,18 @@ type Experience = {
 
 const EXPERIENCES: Experience[] = [
   {
+    title: "Founder",
+    org: "AgentSEO",
+    dates: "2026 - Present",
+    link: "https://github.com/ardaedil/AgentSEO",
+    bullets: [
+      "Building a startup product that measures how reliably AI agents operate OpenAPI-based interfaces before touching production systems.",
+      "Designed a benchmark workflow for importing OpenAPI specs, normalizing tools, generating tasks, running provider adapters, and comparing deterministic outcomes.",
+      "Implemented a FastAPI, PostgreSQL, Next.js, and Tailwind stack with sandbox resets, visible traces, failure taxonomy, tests, Docker Compose, and keyless CI.",
+    ],
+    featured: true,
+  },
+  {
     title: "Software Engineering Intern",
     org: "BGTS",
     dates: "Jun 2026 - Aug 2026",

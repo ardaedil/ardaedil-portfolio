@@ -10,6 +10,19 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    role: "Founder & Full-Stack Engineer",
+    name: "AgentSEO",
+    dates: "2026",
+    badge: "Startup + AI Agents",
+    link: "https://github.com/ardaedil/AgentSEO",
+    featured: true,
+    bullets: [
+      "Built a working research MVP for measuring how interface design affects AI-agent reliability on OpenAPI-based APIs.",
+      "Created a benchmark system with normalized tools, generated task catalogs, resettable sandboxes, deterministic assertions, failure taxonomy, and cross-model reports.",
+      "Shipped a FastAPI/PostgreSQL backend and Next.js workflow UI with OpenAI, Anthropic, Gemini, and bounded mock-agent adapters.",
+    ],
+  },
+  {
     role: "Machine Learning Engineer",
     name: "MarioMind",
     dates: "2026",

@@ -12,6 +12,11 @@ Relevant coursework includes Introduction to Artificial Intelligence and Data St
 
 ## Experience
 
+### AgentSEO - Founder, 2026 - Present
+- Building a startup product that measures how reliably AI agents operate OpenAPI-based interfaces before touching production systems.
+- Designed a benchmark workflow for importing OpenAPI specs, normalizing tools, generating tasks, running provider adapters, and comparing deterministic outcomes.
+- Implemented a FastAPI, PostgreSQL, Next.js, and Tailwind stack with sandbox resets, visible traces, failure taxonomy, tests, Docker Compose, and keyless CI.
+
 ### BGTS - Software Engineering Intern, Jun 2026 - Aug 2026
 - Owned the CaseForge librarian module, translating RFP requirements into ranked past-engagement matches with supporting rationale for proposal workflows.
 - Defined JSON interface contracts and implemented validation, error handling, and unit tests for reliable integration across CaseForge components.
@@ -24,6 +29,9 @@ Relevant coursework includes Introduction to Artificial Intelligence and Data St
 - Led development of a timesheet data system, translated stakeholder requirements into SQLite and SQLAlchemy schemas, and coordinated Python data-import work across the project team.
 
 ## Selected Projects
+
+### AgentSEO
+Built a startup MVP for AI-agent API reliability benchmarking, with OpenAPI import, normalized tool definitions, task generation, resettable sandbox execution, provider adapters, deterministic assertions, failure analysis, and cross-model reporting.
 
 ### MarioMind
 Built a reproducible deep-reinforcement-learning experiment framework with DQN, Double DQN, configurable rewards and exploration, baseline agents, evaluation plots, and failure analysis.
