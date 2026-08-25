@@ -4,7 +4,7 @@ import { Github, Linkedin, Instagram, ArrowUp } from "lucide-react";
 
 export default function Dock() {
   return (
-    <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2">
+    <div className="fixed bottom-6 left-1/2 z-50 hidden -translate-x-1/2 sm:block">
       <div className="flex items-center gap-2 rounded-2xl border border-[#d8d2c5] bg-[#fbfaf7]/85 px-3 py-2 shadow-[0_18px_40px_-28px_rgba(0,0,0,0.55)] backdrop-blur">
         {/* LinkedIn */}
         <a

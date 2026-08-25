@@ -1,4 +1,4 @@
-type Experience = {
+export type Experience = {
   title: string;
   org?: string;
   dates: string;
@@ -7,7 +7,7 @@ type Experience = {
   link?: string;
 };
 
-const EXPERIENCES: Experience[] = [
+export const EXPERIENCES: Experience[] = [
   {
     title: "Founder",
     org: "AgentSEO",
@@ -54,9 +54,12 @@ const EXPERIENCES: Experience[] = [
   },
 ];
 
+const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 function Card({ exp }: { exp: Experience }) {
   return (
     <div
+      id={`experience-${slugify(`${exp.org ?? ""}-${exp.title}`)}`}
       className={`group rounded-2xl border ${
         exp.featured ? "border-[#b8cfe0]" : "border-[#d8d2c5]"
       } bg-[#fbfaf7]/70 p-5 shadow-sm backdrop-blur transition hover:bg-[#fffefb] hover:shadow-md`}
@@ -96,7 +99,7 @@ function Card({ exp }: { exp: Experience }) {
 
 export default function ExperienceList() {
   return (
-    <section className="mt-10" id="experience">
+    <section className="section-anchor mt-12 sm:mt-16" id="experience">
       <h2 className="font-[var(--font-serif)] text-3xl text-[#111111]">Experience</h2>
       <div className="mt-4 space-y-4">
         {EXPERIENCES.map((experience) => (

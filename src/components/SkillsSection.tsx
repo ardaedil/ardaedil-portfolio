@@ -158,7 +158,7 @@ function SkillCard({ skill }: { skill: Skill }) {
 
 export default function SkillsSection() {
   return (
-    <section className="mt-16" id="skills">
+    <section className="section-anchor mt-16" id="skills">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <div className="text-[11px] font-semibold uppercase tracking-wide text-[#756f65]">Technical Toolkit</div>

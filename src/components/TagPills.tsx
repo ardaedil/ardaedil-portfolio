@@ -14,7 +14,7 @@ export function TagPills({ tags }: { tags: Tag[] }) {
           "inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs shadow-sm backdrop-blur transition-all duration-200 motion-reduce:transition-none";
 
         const hover =
-          "hover:-translate-y-0.5 hover:rotate-[-1deg] hover:shadow-md active:translate-y-0";
+          "hover:-translate-y-0.5 hover:border-[#b9c6cd] hover:shadow-md active:translate-y-0 motion-reduce:transform-none";
 
         const style = isAvailable
           ? "border-[#abcce2] bg-[#d7ebf7]/75 text-[#24475d]"

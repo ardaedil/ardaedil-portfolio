@@ -7,8 +7,8 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Arda Edil",
-  description: "Software Engineer Portfolio",
+  title: "Arda Edil — Student Founder & Software Engineer",
+  description: "University of Michigan Computer Science student building AgentSEO and technically ambitious software across AI, full-stack engineering, and applied ML.",
 };
 
 export default function RootLayout({

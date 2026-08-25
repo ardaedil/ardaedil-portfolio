@@ -51,7 +51,7 @@ const COURSES: Course[] = [
 
 export default function TechnicalCourses() {
   return (
-    <section className="mt-16">
+    <section className="section-anchor mt-16" id="coursework">
       <h2 className="font-[var(--font-serif)] text-3xl text-[#111111]">
         Technical Coursework
       </h2>

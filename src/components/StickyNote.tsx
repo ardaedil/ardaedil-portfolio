@@ -10,6 +10,7 @@ export default function StickyNote() {
             src="/headshot.jpg"
             alt="Arda Edil"
             fill
+            sizes="240px"
             className="object-cover"
             priority
           />
@@ -25,9 +26,9 @@ export default function StickyNote() {
           {/* Body */}
           <ul className="mt-3 space-y-2 text-xs leading-5 text-[#42403a]">
             <li>• Ask the AI about my experience or projects</li>
-            <li>• Switch between concise & detailed answers</li>
-            <li>• Try suggested questions to get started</li>
-            <li>• Ask questions of your own</li>
+            <li>• Explore AgentSEO and my selected builds</li>
+            <li>• Press ⌘K / Ctrl+K to jump anywhere</li>
+            <li>• Try a suggested AI question or your own</li>
           </ul>
 
           {/* Footer hint */}
