@@ -5,6 +5,7 @@
   --foreground: #141414;
   --app-font-sans: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --app-font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-serif: var(--app-font-serif);
 }
 
 @theme inline {
@@ -14,17 +15,19 @@
   --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--app-font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #c8dbe4;
+  color: #142832;
 }
 
 .paper-bg {
@@ -44,25 +47,6 @@ body {
   opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
   mix-blend-mode: screen;
-}
-
-/* --- Global mode controller styles --- */
-.mode-studio.paper-bg {
-  background:
-    radial-gradient(900px 520px at 72% 0%, rgba(78, 102, 119, 0.22), transparent 62%),
-    linear-gradient(180deg, #050505 0%, #0a0a0a 58%, #050505 100%);
-}
-
-.mode-command.paper-bg {
-  background:
-    radial-gradient(900px 520px at 72% 0%, rgba(63, 86, 79, 0.24), transparent 62%),
-    linear-gradient(180deg, #050505 0%, #090909 58%, #050505 100%);
-}
-
-.mode-hybrid.paper-bg {
-  background:
-    radial-gradient(900px 520px at 72% 0%, rgba(91, 84, 76, 0.24), transparent 62%),
-    linear-gradient(180deg, #050505 0%, #0a0a0a 58%, #050505 100%);
 }
 
 .mesh-bg::after {
@@ -120,4 +104,80 @@ body {
   border: 1px solid rgba(214, 211, 202, 0.85);
   box-shadow: 0 24px 48px -34px rgba(20, 20, 20, 0.5);
   backdrop-filter: blur(6px);
+}
+
+.section-anchor {
+  scroll-margin-top: 6.5rem;
+}
+
+.hero-enter {
+  animation: hero-enter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.command-dialog {
+  animation: command-in 170ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.status-pulse {
+  animation: status-pulse 2.2s ease-in-out infinite;
+}
+
+.featured-build {
+  background-image:
+    radial-gradient(560px 300px at 92% 2%, rgba(95, 133, 153, 0.18), transparent 72%),
+    linear-gradient(145deg, #17232b, #132028);
+}
+
+.ai-feature {
+  background-image:
+    radial-gradient(620px 260px at 100% 0%, rgba(166, 196, 210, 0.34), transparent 68%),
+    linear-gradient(145deg, rgba(244, 248, 249, 0.98), rgba(230, 240, 244, 0.98));
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes command-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes status-pulse {
+  0%, 100% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 0 rgba(110, 231, 183, 0);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 5px rgba(110, 231, 183, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

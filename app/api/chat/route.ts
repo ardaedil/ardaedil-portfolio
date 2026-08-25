@@ -6,9 +6,18 @@ export const runtime = "nodejs";
 
 type Mode = "concise" | "detailed";
 
-function readAllMarkdown(): string {
+type ContentDocument = {
+  file: string;
+  text: string;
+};
+
+type ContentChunk = ContentDocument & {
+  id: string;
+};
+
+function readAllMarkdown(): ContentDocument[] {
   const base = path.join(process.cwd(), "content");
-  if (!fs.existsSync(base)) return "";
+  if (!fs.existsSync(base)) return [];
 
   const files: string[] = [];
   const walk = (dir: string) => {
@@ -21,19 +30,28 @@ function readAllMarkdown(): string {
   };
   walk(base);
 
-  // include filenames so citations can be more meaningful later
   return files
-    .map((f) => `\n\n### FILE: ${path.relative(process.cwd(), f)}\n${fs.readFileSync(f, "utf8")}`)
-    .join("\n\n---\n\n");
+    .map((file) => ({
+      file: path.relative(process.cwd(), file).replaceAll("\\", "/"),
+      text: fs.readFileSync(file, "utf8"),
+    }));
 }
 
-function chunkText(text: string, chunkSize = 900, overlap = 150) {
-  const chunks: string[] = [];
-  let i = 0;
-  while (i < text.length) {
-    const end = Math.min(i + chunkSize, text.length);
-    chunks.push(text.slice(i, end));
-    i += chunkSize - overlap;
+function chunkDocuments(documents: ContentDocument[], chunkSize = 900, overlap = 150): ContentChunk[] {
+  const chunks: ContentChunk[] = [];
+  for (const document of documents) {
+    let index = 0;
+    let offset = 0;
+    while (offset < document.text.length) {
+      const end = Math.min(offset + chunkSize, document.text.length);
+      chunks.push({
+        id: `${document.file}-${index}`,
+        file: document.file,
+        text: document.text.slice(offset, end),
+      });
+      offset += chunkSize - overlap;
+      index += 1;
+    }
   }
   return chunks;
 }
@@ -49,12 +67,44 @@ function score(query: string, chunk: string) {
   return s;
 }
 
-function retrieveTop(query: string, chunks: string[], k = 5) {
+function retrieveTop(query: string, chunks: ContentChunk[], k = 5) {
   return chunks
-    .map((text, idx) => ({ id: `source-${idx}`, text, s: score(query, text) }))
+    .map((chunk) => ({ ...chunk, s: score(query, chunk.text) }))
     .sort((a, b) => b.s - a.s)
     .slice(0, k)
     .filter((x) => x.s > 0);
+}
+
+function sourceMeta(file: string) {
+  const filename = file.split("/").at(-1)?.replace(/\.(md|txt)$/i, "") ?? "portfolio";
+  const projectSources: Record<string, { label: string; href: string }> = {
+    agentseo: { label: "AgentSEO", href: "#project-agentseo" },
+    mariomind: { label: "MarioMind", href: "#project-mariomind" },
+    "varlens-ai": { label: "VARLens AI", href: "#project-varlens-ai" },
+    "ai-stock-analyzer": { label: "AI Stock Analyzer", href: "#project-ai-stock-analyzer-rag-retrieval" },
+    "oxpal-biofeedback": { label: "OxPal Research", href: "#project-oxpal-biofeedback-research" },
+    lore: { label: "Lore", href: "#project-lore" },
+    "ai-augmented-portfolio": { label: "AI Portfolio", href: "#project-ai-powered-portfolio-website" },
+  };
+  const experienceSources: Record<string, { label: string; href: string }> = {
+    agentseo: { label: "AgentSEO Experience", href: "#experience-agentseo-founder" },
+    bgts: { label: "BGTS", href: "#experience-bgts-software-engineering-intern" },
+    "menlo-innovations": { label: "Menlo Innovations", href: "#experience-menlo-innovations-project-manager-software-developer" },
+    "setas-masterbatch": { label: "Setas Masterbatch", href: "#experience-setas-masterbatch-supply-chain-analyst-intern" },
+  };
+  const label = filename
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ")
+    .replace("Agentseo", "AgentSEO")
+    .replace("Mariomind", "MarioMind")
+    .replace("Varlens Ai", "VARLens AI")
+    .replace("Bgts", "BGTS");
+
+  if (file.startsWith("content/projects/")) return projectSources[filename] ?? { label, href: "#projects" };
+  if (file.startsWith("content/experience/")) return experienceSources[filename] ?? { label, href: "#experience" };
+  if (file === "content/resume.md") return { label: "Resume", href: "/arda-edil-resume.pdf" };
+  return { label: "About Arda", href: "#top" };
 }
 
 export async function POST(req: Request) {
@@ -78,13 +128,13 @@ export async function POST(req: Request) {
 
     const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-    const all = readAllMarkdown();
-    const chunks = chunkText(all);
+    const documents = readAllMarkdown();
+    const chunks = chunkDocuments(documents);
     const top = retrieveTop(message, chunks, 6);
 
     const context =
       top.length > 0
-        ? top.map((t) => `(${t.id})\n${t.text}`).join("\n\n-----\n\n")
+        ? top.map((source) => `(SOURCE: ${source.file})\n${source.text}`).join("\n\n-----\n\n")
         : "No sources matched.";
 
     const instructions = [
@@ -126,7 +176,12 @@ export async function POST(req: Request) {
 
     return Response.json({
       answer,
-      sources: top.map((t) => t.id),
+      sources: Array.from(
+        new Map(top.map((source) => {
+          const meta = sourceMeta(source.file);
+          return [meta.href, meta];
+        })).values()
+      ).slice(0, 4),
     });
   } catch (err: unknown) {
     console.error(err);

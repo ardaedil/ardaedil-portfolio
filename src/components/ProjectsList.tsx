@@ -1,4 +1,4 @@
-type Project = {
+export type Project = {
   role: string;
   name: string;
   dates: string;
@@ -8,7 +8,7 @@ type Project = {
   badge?: string;
 };
 
-const PROJECTS: Project[] = [
+export const PROJECTS: Project[] = [
   {
     role: "Founder & Full-Stack Engineer",
     name: "AgentSEO",
@@ -89,14 +89,17 @@ const PROJECTS: Project[] = [
     bullets: [
       "Built a Next.js portfolio with an AI chat panel powered by a custom API route.",
       "Implemented retrieval over portfolio content to provide grounded, first-person answers.",
-      "Designed a recruiter-friendly interface with multiple viewing modes and responsive project cards.",
+      "Designed a founder-first opening, keyboard command palette, grounded AI interface, and responsive project cards.",
     ],
   },
 ];
 
+const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 function Card({ p }: { p: Project }) {
   return (
     <div
+      id={`project-${slugify(p.name)}`}
       className={`group rounded-2xl border ${
         p.featured ? "border-[#b8cfe0]" : "border-[#d8d2c5]"
       } bg-[#fbfaf7]/70 p-5 shadow-sm backdrop-blur transition hover:bg-[#fffefb] hover:shadow-md`}
@@ -141,7 +144,7 @@ function Card({ p }: { p: Project }) {
 
 export default function ProjectsList() {
   return (
-    <section className="mt-10" id="projects">
+    <section className="section-anchor mt-16" id="projects">
       <h2 className="font-[var(--font-serif)] text-3xl text-[#111111]">Projects</h2>
       <div className="mt-4 space-y-4">
         {PROJECTS.map((project) => (
